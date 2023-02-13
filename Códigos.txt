@@ -1,0 +1,43 @@
+var n1 = prompt("Digite");
+n1 = parseInt(n1);
+
+var n2 = prompt("Digite");
+n2 = parseInt(n2);
+
+media = (n1+n2)/2;
+
+alert("Media: " +media);
+
+
+var n1 = prompt("Digite: ");
+n1 = parseInt(n1);
+
+var n2 = prompt("Digite: ");
+
+alert("A soma é: " +(n1 + n2));
+alert("A subtração é: " +(n1-n2)); 
+alert("A divisão é: " +(n1 / n2));
+
+
+
+
+var n1 = prompt("Digite: ");
+n1 = parseInt(n1);
+var n2 = prompt("Digite: ");
+n2 = parseInt(n2);
+
+
+alert("O resto da divisão de " + n1 + " por " + n2 + "é: " + n1 % n2);
+alert("O valor de " + n1 + " elevado por " + n2 + "é: " + n1 ** n2)
+
+
+
+var n1 = prompt("Digite: ");
+n1 = parseFloat(n1);
+
+var n2 = prompt("Digite: "):
+n2 = parseFloat(n2);
+
+var media = (n1 + n2)/2
+
+alert(media > 5) 

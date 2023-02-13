@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Aula 06</title>
+</head>
+<body>
+
+    <script>
+
+        //Math.random(); // vai de 0 a 0.99
+       // Math.random() *2 // multiplica por 2 para passar de 0.99 e se tornar 1
+       // parseInt (Math.random() * 2) // multiplica por 2 e tira os decimais, podendo apenas ser 0 ou 1 
+
+       var nJogador1 = prompt("Numero do primeiro jogador: ");
+       nJogador1 = parseInt(nJogador1);
+
+       var nJogador2 = prompt("Numero do segundo jogador: ");
+       nJogador2 = parseInt(nJogador2);
+
+       
+
+       if( nJogador1 === nJogador2){
+        alert("Empate");
+       }
+       else{
+        var sorteio = parseInt(Math.random() *2);
+       }
+       if(sorteio === 0){
+
+        if(nJogador1 > nJogador2){
+         alert("O segundo jogador ganhou");
+        }else{
+        alert("O primeiro jogador ganhou");
+       }
+
+    }else{
+        if(nJogador2 > nJogador1){
+            alert("O primeiro jogador ganhou");
+        }else{
+            alert("O segundo jogador ganhou");
+        }
+    }
+        
+      
+
+
+    </script>
+    
+</body>
+</html>
