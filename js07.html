@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação</title>
+</head>
+<body>
+
+    <h1>JavaScript</h1>
+
+    <script> 
+    var nota1 = prompt("Nota 1: ");
+    nota1 = parseFloat(nota1);
+
+    var nota2 = prompt("Nota 2: ");
+    nota2 = parseFloat(nota2);
+
+    var media = (nota1+nota2)/2;
+
+    // Mesma lógica com and(&&)
+    
+   // if(nota1 > 0 && nota2 > 0 && media > 5){
+      //  alert("Aprovado)
+   // }else{
+    //    alert("Reprovado")
+   // }
+
+
+   // Mesma lógica com or(||)
+
+    if(nota1 == 0 || nota2 == 0 || media <= 5){
+        alert("Reprovado")
+    }else{
+        alert("Aprovado")
+    }
+
+    
+    </script>
+    
+</body>
+</html>

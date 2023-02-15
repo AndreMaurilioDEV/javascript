@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+     
+     /*Faça um programa que pergunte em que turno você estuda. Peça para digitar M-matutino ou V-vespertino ou N-noturno. 
+     Imprima a mensagem “Bom dia!” ou  “Boa Noite” ou “Valor inválido”, conforme o caso.  
+       alert("Digite seu turno ")
+       var turno = prompt("M - Manhã ou V - Vespertino ou N - Noturno")
+        if(turno === "M" || turno === "V"){
+        alert("Bom dia!")}
+        else{
+        alert("Boa noite!")}
+        */
+
+
+
+         //Faça um programa que recebe o salário de um colaborador 
+        //e o reajuste segundo o seguinte critério, baseado no salário atual;
+         //informe na tela: salario antes, percentual de aumento, valor do aumento e salario com o aumento
+
+        var salario = prompt("Digite o seu salário: ");
+        salario = parseFloat(salario);
+
+        var reajuste
+        reajuste = parseFloat(reajuste);
+
+        var salariofinal
+        salariofinal = parseFloat(salariofinal);
+
+        
+
+        if(salario <= 280){
+            alert("Percentual de reajuste é 20%")
+             reajuste =  salario * 0.2;
+             alert("Aumento de " + reajuste + " Reais")
+          
+        }
+        if(salario > 280 && salario <= 700){
+            alert("Percentual de reajuste é 15%")
+            reajuste = salario * 0.15;
+            alert("Aumento de " + reajuste + " Reais")
+           
+
+        }
+        if(salario > 700 && salario <= 1500){
+            alert("Percentual de reajuste é 10%")
+            reajuste = salario * 0.10;
+            alert("Aumento de " + reajuste + " Reais")
+          
+
+        }
+
+        if(salario > 1500){
+            alert("Percentual de reajuste é 5%")
+            reajuste = salario * 0.05;
+            alert("Aumento de " + reajuste + " Reais")
+           
+        }
+
+        alert("Seu salário antes do reajuste: R$" +salario)
+        alert("Salário depois do reajuste: R$" +(reajuste + salario))
+
+
+
+
+
+         
+
+
+         
+
+        
+
+       
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

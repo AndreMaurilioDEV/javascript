@@ -1,4 +1,4 @@
-var n1 = prompt("Digite");
+1 - var n1 = prompt("Digite");
 n1 = parseInt(n1);
 
 var n2 = prompt("Digite");
@@ -21,7 +21,7 @@ alert("A divisão é: " +(n1 / n2));
 
 
 
-var n1 = prompt("Digite: ");
+2.   var n1 = prompt("Digite: ");
 n1 = parseInt(n1);
 var n2 = prompt("Digite: ");
 n2 = parseInt(n2);
@@ -41,3 +41,100 @@ n2 = parseFloat(n2);
 var media = (n1 + n2)/2
 
 alert(media > 5) 
+
+
+
+3.   Faça um programa que pergunte em que turno você estuda. Peça para digitar M-matutino ou V-vespertino ou N-noturno. 
+     Imprima a mensagem “Bom dia!” ou  “Boa Noite” ou “Valor inválido”, conforme o caso.  
+       alert("Digite seu turno ")
+       var turno = prompt("M - Manhã ou V - Vespertino ou N - Noturno")
+        if(turno === "M" || turno === "V"){
+        alert("Bom dia!")}
+        else{
+        alert("Boa noite!")}
+
+
+
+
+
+
+
+4.     Faça um programa que recebe o salário de um colaborador 
+        e o reajuste segundo o seguinte critério, baseado no salário atual;
+         informe na tela: salario antes, percentual de aumento, valor do aumento e salario com o aumento
+        var salario = prompt("Digite o seu salário: ");
+        salario = parseFloat(salario);
+
+        var reajuste
+        reajuste = parseFloat(reajuste);
+
+        var salariofinal
+        salariofinal = parseFloat(salariofinal);
+
+        
+
+        if(salario <= 280){
+            alert("Percentual de reajuste é 20%")
+             reajuste =  salario * 0.2;
+             alert("Aumento de " + reajuste + " Reais")
+          
+        }
+        if(salario > 280 && salario <= 700){
+            alert("Percentual de reajuste é 15%")
+            reajuste = salario * 0.15;
+            alert("Aumento de " + reajuste + " Reais")
+           
+
+        }
+        if(salario > 700 && salario <= 1500){
+            alert("Percentual de reajuste é 10%")
+            reajuste = salario * 0.10;
+            alert("Aumento de " + reajuste + " Reais")
+          
+
+        }
+
+        if(salario > 1500){
+            alert("Percentual de reajuste é 5%")
+            reajuste = salario * 0.05;
+            alert("Aumento de " + reajuste + " Reais")
+           
+        }
+
+        alert("Seu salário antes do reajuste: R$" +salario)
+        alert("Salário depois do reajuste: R$" +(reajuste + salario))
+
+
+
+
+
+
+
+
+5.   Faça um Programa que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar.
+            O resultado da operação deve ser acompanhado de uma frase que diga se o número e: Par ou ímpar;
+            Positivo ou negativo;
+
+
+        var n1 = prompt("Digite um número");
+        n1 = parseInt(n1);
+
+        
+        var opcao = prompt("Qual operação você deseja executar: 1) saber se é positivo ou negativo 2) par ou ímpar");
+
+        if(opcao == '1'){
+            if(n1 > 0){
+                alert("Positivo")
+            }else{
+                alert("Negativo")
+            }
+        }
+            
+
+        if(opcao == '2'){
+            if(n1 % 2 == 0){
+                alert("Par")
+            }
+        }else{
+            alert("Número ímpar")
+        }

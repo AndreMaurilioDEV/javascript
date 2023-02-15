@@ -20,29 +20,29 @@
        var nJogador2 = prompt("Numero do segundo jogador: ");
        nJogador2 = parseInt(nJogador2);
 
-       
+       var sorteio = parseInt (Math.random() * 2);
 
        if( nJogador1 === nJogador2){
         alert("Empate");
        }
        else{
-        var sorteio = parseInt(Math.random() *2);
-       }
-       if(sorteio === 0){
-
-        if(nJogador1 > nJogador2){
-         alert("O segundo jogador ganhou");
-        }else{
-        alert("O primeiro jogador ganhou");
+        alert("Sorteio: " +sorteio);
        }
 
-    }else{
-        if(nJogador2 > nJogador1){
-            alert("O primeiro jogador ganhou");
-        }else{
-            alert("O segundo jogador ganhou");
-        }
-    }
+       if(sorteio === 0 && nJogador1 < nJogador2 || sorteio === 1 && nJogador1 > nJogador2 ){
+        alert("Primeiro jogador ganhou");
+       }else{
+        alert("Segundo jogador ganhou");
+       }
+
+      
+
+    
+
+
+    
+
+       
         
       
 

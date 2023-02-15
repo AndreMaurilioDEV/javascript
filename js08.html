@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 08</title>
+</head>
+<body>
+    <h1>JavaScript Lógica</h1>
+    
+    <script>
+        var refeicao = prompt("Digite de 1 a 4 para se informar sobre opções de refeições hoje: ")
+         refeicao = parseInt(refeicao);
+
+         switch(refeicao){
+            case 1: 
+            alert("Arroz/Feijão/Galinha");
+            break
+
+            case 2: 
+            alert("Arroz/Lasanha");
+            break
+
+            case 3: 
+            alert("Costela/Arroz/Feijão/Farofa");
+            break
+
+
+            case 4: 
+            alert("Arroz/Macarrão/Feijão/Carne/Salada");
+            break
+
+            default: 
+            alert("Há somente 4 opções");
+         }
+    </script>
+</body>
+</html>
