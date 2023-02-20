@@ -12,8 +12,8 @@
 
         
      
-     //Faça um programa que pergunte em que turno você estuda. Peça para digitar M-matutino ou V-vespertino ou N-noturno. 
-    // Imprima a mensagem “Bom dia!” ou  “Boa Noite” ou “Valor inválido”, conforme o caso.  
+     /*Faça um programa que pergunte em que turno você estuda. Peça para digitar M-matutino ou V-vespertino ou N-noturno. 
+     Imprima a mensagem “Bom dia!” ou  “Boa Noite” ou “Valor inválido”, conforme o caso.  
        alert("Digite seu turno ")
        var turno = prompt("M - Manhã ou V - Vespertino ou N - Noturno")
         if(turno === "M" || turno === "V"){
@@ -24,9 +24,9 @@
 
 
 
-         //Faça um programa que recebe o salário de um colaborador 
-        //e o reajuste segundo o seguinte critério, baseado no salário atual;
-         //informe na tela: salario antes, percentual de aumento, valor do aumento e salario com o aumento
+         Faça um programa que recebe o salário de um colaborador 
+        e o reajuste segundo o seguinte critério, baseado no salário atual;
+         informe na tela: salario antes, percentual de aumento, valor do aumento e salario com o aumento
 
         var salario = prompt("Digite o seu salário: ");
         salario = parseFloat(salario);
@@ -69,6 +69,217 @@
 
         alert("Seu salário antes do reajuste: R$" +salario)
         alert("Salário depois do reajuste: R$" +(reajuste + salario))
+        
+        */
+
+
+       // Faça um programa que peça 5 idades e calcule a média
+       /*var i 
+       i = parseFloat(i);
+       var media;
+       media = parseInt(media)
+       var soma = 0;
+       //var soma = parseInt(soma);
+
+       for(i=1; i<=5; i++){
+        var idade = prompt("Digite sua idade: ");
+        idade = parseInt(idade)
+        soma = soma + idade
+       }
+
+       media = soma / (i-1)
+
+       document.write("A média de idades é: " +media)
+       */
+
+
+       // Faça um programa que receba a idade, altura e o peso de 25 pessoas, Calcule e mostre:
+        //A quantidade de pessoas com idade superior a 50 anos;
+        //A média das Alturas das pessoas com idade entre 10 e 20 anos
+
+        /*
+        var idade = 0;
+        var maior50 = 0;
+        var somaAltura = 0;
+        var entre10e20 = 0;
+
+
+        for(i=1; i<=5; i++){
+            var idade = prompt("Digite sua idade: ");
+            idade = parseInt(idade);
+            var altura = prompt("Digite sua altura: ")
+            altura = parseInt(altura);
+            
+        if(idade > 50){
+            maior50 += 1;
+
+        }
+
+        if(idade > 10 && idade <= 20){
+            somaAltura += altura;
+            entre10e20 += 1;
+            
+        }
+
+       
+        }
+
+        document.write("Pessoas com 50 ou mais: " +maior50 + "<br>")
+        document.write("Média de altura entre 10 e 20 anos: " +somaAltura/entre10e20)
+        */
+
+
+
+
+
+
+
+
+
+
+
+       /* Faça um programa que receba a idade de dez pessoas e que calcule e mostre a quantidade de pessoas com idade maior ou igual a 18 anos.
+
+
+       var qtd18anos = 0;
+       var idade = 0;
+
+
+       for(i=1;i<=5;i++){
+
+        var idade = prompt("Idade: ");
+        idade = parseInt(idade);
+
+
+        if(idade >= 18){
+            qtd18anos += 1;
+
+        }
+
+       }
+
+       document.write("Quantidade com 18 ou mais: " +qtd18anos);
+
+       */
+
+
+
+
+
+
+
+
+       
+       //Faça um programa que receba a idade e o sexto de sete pessoas e que calcule e mostre:
+       // A idade média do grupo;
+        //A idade média das mulheres;
+       // A idade média dos homens;  
+
+
+       /*
+        var idade = 0;
+        var idadeGeral = 0;
+        var qtdMulheres = 0;
+        var qtdHomens = 0;
+        var idadeMulheres = 0;
+        var idadeHomens = 0;
+        var sexo;
+
+        for(i=1; i<=6; i++){
+
+
+        var sexo = prompt("M- Masculino ou F- Feminino: ");
+
+
+        var idade = prompt("Idade: ");
+        idade = parseInt(idade);
+        idadeGeral += idade;
+
+      
+        if(sexo === "M"){
+            qtdMulheres += 1;
+            idadeMulheres += idade;
+
+        }
+
+        if(sexo === "F"){
+            qtdHomens += 1;
+            idadeHomens += idade;
+
+        }
+
+
+    }
+
+    document.write("Média geral das idades: " +idadeGeral/3 + "<br>");
+    document.write("Média de idade entre mulheres: " +idadeMulheres/qtdMulheres + "<br>")
+    document.write("Média de idade entre homens: " +idadeHomens/qtdHomens)
+
+    */
+
+    
+
+
+
+   /* Faça um programa que usando laços de repetição receba a idade e o peso de 15 pessoas. Calcule e mostre as médias dos pesos das pessoas da mesma faixa etária. As faixas etárias são: de 1 a 10 anos, de ll a 20 anos, de 21 a 30 anos e maiores de 31 anos.  
+
+
+
+   var idade = 0;
+   var peso = 0;
+   var pesoFaixa1 = 0;
+   var pesoFaixa2 = 0;
+   var pesoFaixa3 = 0;
+   var pesoFaixa4 = 0;
+   var qtdFaixa1 = 0;
+   var qtdFaixa2 = 0;
+   var qtdFaixa3 = 0;
+   var qtdFaixa4 = 0;
+
+   for(i=1; i<=15;i++){
+
+    var idade = prompt("Digite sua idade: ");
+
+    var peso = prompt("Digite seu peso: ");
+
+
+    if(idade > 1 && idade <= 10){
+        pesoFaixa1 += peso;
+        qtdFaixa1 += 1;
+    }
+
+    if(idade >= 11 && idade <= 20){
+        pesoFaixa2 += peso;
+        qtdFaixa2 += 1;
+        
+    }
+
+    if(idade >= 21 && idade <= 30){
+        pesoFaixa3 += peso;
+        qtdFaixa3 += 1;
+        
+    }
+
+
+    if(idade > 31){
+        pesoFaixa4 += peso;
+        qtdFaixa4 += 1;
+        
+    }
+
+
+
+
+    
+
+   }
+
+   */
+
+
+
+
+
 
 
 
