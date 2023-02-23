@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DESAFIO</h1>
+
+    <button onclick="soma()">+</button>
+    <button onclick="subtracao()">-</button>
+    <button onclick="multiplicacao()">*</button>
+    <button onclick="divisao()">/</button>
+
+    <div id="output"></div>
+
+    <script>
+
+
+
+        var numero = prompt("Digite um número");
+        numero = parseFloat(numero);
+        escreve();
+        
+        
+        function escreve(){
+            var output = document.querySelector("#output");
+            output.innerHTML = numero;
+        }
+
+        function soma(){
+
+            
+            var n = prompt("Digite outro número: ")
+            n = parseFloat(n);
+            numero = (numero + n); // ou numero += n;
+           escreve();
+        }
+
+        function subtracao(){
+
+
+        var n = prompt("Digite outro número: ")
+        n = parseFloat(n);
+        numero = (numero - n); // ou numero -= n;
+        escreve();
+        }
+
+        function multiplicacao(){
+
+            var n = prompt("Digite para multiplicar: ");
+            n = parseFloat(n);
+            numero = (numero * n); // ou numero *= n;
+            escreve();
+        }
+
+        function divisao(){
+
+            var n = prompt("Digite um número para divdir: ");
+            n = parseFloat(n);
+            numero = numero/n // ou numero /= n;
+            escreve();
+        }
+
+
+
+
+        
+      
+     
+       
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

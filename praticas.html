@@ -277,6 +277,46 @@
    */
 
 
+   var somaVista = 0;
+   var somaPrazo = 0;
+   var transacao = 0;
+   var somaTransacao = 0;
+   var valorPrestacao = 0;
+  
+   
+
+   for(i=1; i<=2; i++){
+    var cod = prompt("V - Vista ou P - Prazo: ")
+    var transacao = prompt("Informe o valor da transação: ");
+    transacao = parseFloat(transacao)
+
+    somaTransacao += transacao;
+    somaTransacao = parseFloat(somaTransacao)
+
+   
+
+    if(cod == "p"){
+        somaPrazo += transacao
+        somaPrazo = parseFloat(somaPrazo)
+        valorPrestacao = somaPrazo/3 
+        valorPrestacao = parseFloat(valorPrestacao)
+   
+      
+      
+    }
+
+    if(cod == "v"){
+        somaVista += transacao;
+         somaVista = parseFloat(somaVista)
+       
+    }
+   }
+
+     document.write("O valor total das compras a prazo: " +somaPrazo + "<br>")  
+     document.write("O valor total das compras á vista: " +somaVista + "<br>")
+        document.write("O valor de cada parcela dividida em 3x, se a compra foi a prazo: " +valorPrestacao)
+
+
 
 
 

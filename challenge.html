@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            display: flex;
+            background-color: lightgray;
+            width: 900px;
+            height: 600px;
+            border-radius: 10px;
+        }
+
+        .containerlogin{
+            display: flex;
+            justify-content: center;
+            width: 65%;
+        }
+
+        #username, #emailadress, #phonenumber{
+            display: block;
+            width: 380px;
+            padding: 15px 10px;
+            border-radius: 5px;
+            border: 0 ;
+            outline: 1px solid gray;
+            margin: 10px 0px 20px 0px;
+        }
+
+        .steps{
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: cadetblue;
+            margin: 20px 0px 20px 20px;
+            border-radius: 10px;
+          
+            
+        }
+
+        .step{
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding-left: 43px;
+            
+            }
+
+            .step .button{
+                width: 38px;
+                height: 38px;
+                margin-right: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: red;
+                border-radius: 50%;
+            }
+
+        
+
+        ul li{
+            list-style-type: decimal;
+        }
+
+        
+
+        .intro{
+            margin-top: 50px;
+            display: flex;
+             align-items: center;
+            justify-content: center;
+        }
+
+        .desc-header{
+            margin: 15px 0px 35px 0px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="steps">
+
+            <div class="step">
+                <div class="button">1</div>
+               <div class="title-step">
+                  <p>STEP1</p>
+                   <p>YOUR INFO</p>
+               </div>
+
+
+            </div>
+
+            <div class="step">
+                <div class="button">1</div>
+                <div class="title-step">
+                    <p>STEP1</p>
+                     <p>YOUR INFO</p>
+                 </div>
+                
+            </div>
+
+
+            <div class="step">
+                <div class="button">1</div>
+                <div class="title-step">
+                    <p>STEP1</p>
+                     <p>YOUR INFO</p>
+                 </div>
+
+                
+            </div>
+
+            <div class="step">
+                <div class="button">1</div>
+                <div class="title-step">
+                    <p>STEP1</p>
+                     <p>YOUR INFO</p>
+                 </div>
+
+                
+            </div>
+        </div>
+
+
+        <div class="containerlogin">
+            <div class="page-login">
+                <div class="intro">
+                    <div class="header">
+                        <div class="title-header">
+                            <h1>Personal info</h1>
+                        </div>
+                        <div class="desc-header">
+                            <p>Please provide your name, email adress and phone number</p>
+                        </div>
+                    </div>
+                </div>
+                <form action="#" method="post" >
+                <div class="inputs">
+                    <label for="username">Name</label>
+                    <input type="text" name="user" id="username" placeholder="Steph king">
+                    <label for="emailadress">Email Adress</label>
+                    <input type="text" name="email" id="emailadress" placeholder="stephking@lorem.com">
+                    <label for="phonenumber">Phone Number</label>
+                    <input type="text" name="phone" id="phonenumber" placeholder="+00 0000-0000">
+                </div>
+                </form>
+            
+            
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica com JavaScript</title>
+</head>
+<body>
+
+    <h1>Lógica - JavaScript</h1>
+
+    <button onclick="mostrarTabuada()">Criar tabuada</button>
+    <button onclick="limparTabuada()">Limpar tabuada</button>  
+
+    <div id="output"></div>
+
+    <script>
+
+        function mostrarTabuada(){ // função
+            
+            
+            var n = prompt("Digite um número: ");
+
+            limparTabuada(); // se o usuário quiser outra tabuada, a tela vai limpar e mostrar a outra.
+            // função limparTabuada foi reaproveitada, invés de ser digitada novamente. 
+
+            n = parseFloat(n);
+            
+            
+                for(i=1;i<=10;i++){
+                    mensagem += n + ' x ' + i + '=' +  (n*i) + '<br>'; // concatenação 
+                  
+        }
+
+        output.innerHTML = mensagem; // concatenação(tabuada) na tela na div output do html
+    }
+
+    function limparTabuada(){
+        mensagem = '';  // apaga a tabuada
+        output.innerHTML = mensagem; // apaga a tabuada da div output do html
+    }
+
+    var output = document.querySelector("#output");
+
+    var mensagem = '';
+
+
+       // mostrarTabuada(); // invoca a função para reaproveitar o código quando a pag for recarregada
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
