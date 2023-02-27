@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica</title>
+</head>
+<body>
+
+    <h1>DESAFIO 011</h1>
+
+    <button onclick="calcular('+')">+</button>
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">*</button>
+    <button onclick="calcular('/')">/</button>
+
+    <div id="output"></div>
+
+    <script>
+
+
+
+        var numero = prompt("Digite um número");
+        numero = parseFloat(numero);
+        escreve();
+        
+        
+        function escreve(){
+            var output = document.querySelector("#output");
+            output.innerHTML = numero;
+        }
+
+        function calcular(simbolo){
+
+            var n = prompt("Digite outro número: ");
+            n = parseFloat(n);           
+           
+            switch(simbolo){
+
+                case '+': 
+                numero += n;
+                break
+
+                case '-': 
+                numero -= n;
+                break
+
+
+                case '*': 
+                numero *= n; 
+                break
+
+
+                case '/': 
+                numero /= n;
+                break 
+            }
+          
+
+            escreve()
+            
+        }
+
+
+      
+
+
+
+        
+      
+     
+       
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

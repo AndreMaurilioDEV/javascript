@@ -138,3 +138,65 @@ alert(media > 5)
         }else{
             alert("Número ímpar")
         }
+
+
+
+        6. Desafio function
+
+        .HTML
+
+        <button onclick ="soma()" >+</button>
+        <button onclick ="subtracao()">-</button>
+        <button onclick ="multiplicacao()">*</button>
+        <button onclick ="divisao()">+</button>
+
+        <div id="output"></div>
+
+
+        <script>
+
+        var numero = prompt("Digite um número: ");
+        numero = parseFloat(numero);
+        escreve();
+
+
+        function escreve(){
+            var output = document.querySelector('#output');
+            output.innerHTML = numero;
+        }
+
+        function soma(){
+            var n = prompt("Digite outro número: ");
+            n = parseFloat(n);
+            numero += n // numero = numero + n;
+            escreve();
+        }
+
+        function subtracao(){
+            var n = prompt("Digite outro número: ");
+            n = parseFloat(n);
+            numero -= n;
+            escreve();
+        }
+
+        function multiplicacao(){
+            var n = prompt("Digite outro número: ");
+            n = parseFloat(n);
+            numero *= n;
+            escreve();
+        }
+
+
+        function divisao(){
+            var n = prompt("Digite outro número: ");
+            n = parseFloat(n);
+            numero /= n;
+            escreve();
+        }
+
+         </script>
+
+
+
+
+

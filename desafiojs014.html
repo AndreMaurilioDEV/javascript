@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO</title>
+</head>
+<body>
+
+    <h1>DESAFIO JS 014</h1>
+
+    <button onclick="mostrarTela()">Mostrar Área na tela</button>
+    <button onclick="mostrarAlert()">Mostrar Área no alert</button>
+
+    <div id = "output"></div>
+
+
+
+    <script>
+
+        function escreve(mensagem){
+            var output = document.querySelector("#output")
+            output.innerHTML = mensagem;
+        }
+
+       function mostrarTela(){
+
+
+       
+            var altura = prompt("Digite a altura: ");
+            altura = parseFloat(altura);
+
+            var largura = prompt("Digite a largura: ");
+            largura = parseFloat(largura);
+
+            try{
+                var area = calcularArea(altura, largura);
+
+
+            }catch(e){
+                area = e;
+            }
+
+            escreve(area);
+
+           
+
+        }
+
+        function mostrarAlert(){
+
+            var altura = prompt("Digite a altura: ");
+            altura = parseFloat(altura);
+           
+            var largura = prompt("Digite a largura: ");
+            largura = parseFloat(largura);
+
+            try{
+                var area = calcularArea(altura, largura);
+
+
+            }catch(e){
+                area = e;
+            }
+            alert("A área total é: " + area);
+
+            }
+            
+            
+        
+
+
+        function calcularArea(altura,largura){
+
+            if(isNaN(largura) || isNaN(altura)){
+                throw new Error("Digite um valor válido: ");
+                
+            }
+
+            if(largura == undefined || altura  == undefined){
+                throw new Error("É necessário digitar um valor : ");
+                
+            }
+
+            return altura * largura;
+
+        }
+
+    </script>
+
+    
+    
+</body>
+</html>

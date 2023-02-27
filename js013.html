@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>JS 013</h1>
+
+    <button onclick="iniciarCalculo('+')">+</button>
+    <button onclick="iniciarCalculo('-')">-</button>
+    <button onclick="iniciarCalculo('*')">*</button>
+    <button onclick="iniciarCalculo('/')">/</button>
+
+    <div id="output"></div>
+
+
+
+    <script>
+        var n2 = prompt("Digite um número");
+            n2 = parseFloat(n2);
+            escreve(n2);
+        
+        
+            function escreve(mensagem){
+                var output = document.querySelector("#output");
+                output.innerHTML = mensagem; // mensagem é parâmetro, então armazena n2 no output
+            }
+
+            function iniciarCalculo(simbolo){
+
+                var n1 = document.querySelector("#output").textContent //recupera o texto que está dentro do elemento #output e converte pra número, armazenando em n1( primeiro n2 = n1 armazenado)
+                n1 = parseFloat(n1); 
+                // text content não aceita tag html, já o innerHTML aceita.
+
+
+                var n2 = prompt("Digite outro número: ");
+                n2 = parseFloat(n2);
+
+                var msg = calcular(simbolo, n1, n2) // var msg irá retornar a função calcular, que é uma função que recebe símbolo, n1 e n2 para retornar numeroCalculado para 
+                // executar os cálculos de acordo com símbolo.  * O numeroCalculado faz parte da function calcular *
+
+                escreve(msg); // escreve a msg que possui parâmetro  mensagem da função escreve(mensagem), retornando innerHTML na tela.
+
+            }
+
+
+            function calcular(simbolo, n1, n2){
+
+                
+                
+                var numeroCalculado = null;
+        
+                switch(simbolo){ // //simbolo (que veio por parâmetro) é avaliado em switch
+                    case '+':
+                   numeroCalculado = n1 + n2;
+                    break
+                    case '-':
+                    numeroCalculado = n1 - n2;
+                    break
+                    case '*':
+                    numeroCalculado = n1 * n2;
+                    break
+                    case '/':
+                    numeroCalculado = n1 / n2;
+                    break
+                }
+        
+               return numeroCalculado;  // //o valor de numeroCalculado é retornado para quem chamou a função (var msg)
+        
+            }
+    </script>
+    
+</body>
+</html>

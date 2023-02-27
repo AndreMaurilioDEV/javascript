@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica</title>
+</head>
+<body>
+
+    
+    <h1>JS 014 - TRY CATCH</h1>
+
+    <button onclick="iniciarCalculo('+')">+</button>
+    <button onclick="iniciarCalculo('-')">-</button>
+    <button onclick="iniciarCalculo('*')">*</button>
+    <button onclick="iniciarCalculo('/')">/</button>
+
+    <div id="output"></div>
+
+
+
+    <script>
+        var n2 = prompt("Digite um número");
+            n2 = parseFloat(n2);
+            escreve(n2);
+        
+        
+            function escreve(mensagem){
+                var output = document.querySelector("#output");
+                output.innerHTML = mensagem; 
+            }
+
+            function iniciarCalculo(simbolo){
+
+                var n1 = document.querySelector("#output").textContent 
+                n1 = parseFloat(n1); 
+                
+
+
+                var n2 = prompt("Digite outro número: ");
+                n2 = parseFloat(n2);
+
+                try{
+                    var msg = calcular(simbolo, n1, n2) 
+
+                } catch(e){
+                    alert(e) // alert ERROR:
+                    return; // para a função pra não executar a próxima linha escreve(msg)
+
+                }
+
+                escreve(msg); 
+
+            }
+
+
+            function calcular(simbolo, n1, n2){
+                console.log(simbolo)
+
+                if(simbolo !== '+' && simbolo !== '-' && simbolo !== '*' && simbolo !== '/'){
+                    //alert("Digite um símbolo válido!");
+                    throw new Error("Digite um símbolo válido!") // dispara um erro no console
+                    // return 0; // retorna 0 no var msg
+                }
+
+                // isNaN: retorna false se algo digitado pode ser transformado em number(ex: 2 sendo string) e retorna true se algo não pode ser transformado em number(ex: string(a))
+                if( isNaN(n1) || isNaN(n2) ){  // se n1 ou n2 não puder ser convertido para número(for uma string)
+                  //  alert("chama passando somente números");
+                  throw new Error("Só chama passando números!")
+                   // return 0;
+
+                }
+                
+                var numeroCalculado = null;
+        
+                switch(simbolo){ 
+                    case '+':
+                   numeroCalculado = n1 + n2;
+                    break
+                    case '-':
+                    numeroCalculado = n1 - n2;
+                    break
+                    case '*':
+                    numeroCalculado = n1 * n2;
+                    break
+                    case '/':
+                    numeroCalculado = n1 / n2;
+                    break
+                }
+        
+               return numeroCalculado;  
+        
+            }
+    </script>
+    
+</body>
+</html>
