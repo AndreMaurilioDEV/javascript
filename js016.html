@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica</title>
+</head>
+<body>
+
+    <h1> Arrays - Objetos </h1>
+
+    <div id="output"></div>
+
+    <script>
+        // Mostrar dados de um produto específico, estoque e preço 
+
+        var produto1 = new Object();
+        produto1.nome = "lápis";
+        produto1.preco = "1,50";
+        produto1.quantidade = "10";
+       
+        produto1.comprar = function(qtd){ // função comprar
+            if(!qtd){ // se a qtd comprada não ser informada ex: produto1.comprar = function(3) , o qtd vai valer 1 e diminuir de 1 em 1 como antes; 
+
+                qtd = 1;
+
+            }
+            console.log("Comprou um lápis") // compra mostrada no console;
+            this.quantidade = this.quantidade - qtd; // diminuição de quantidade por causa da compra ( this - seleciona a variavel quantidade);
+            // 10 = 10 - 3(qtd)
+            // this.quantidade = 7;
+            console.log(this.quantidade); // quantidade diminuida mostrada no console;
+        }
+
+        var msg = '';
+        var msg = "Nome: " +produto1.nome + "<br>" + "Preço: " +produto1.preco + "<br>" + "Quantidade: " + produto1.quantidade;
+        escreve(msg)
+       
+
+        
+        function escreve(mensagem){
+        var output = document.querySelector("#output")
+        output.innerHTML = mensagem;
+        }
+
+
+        
+
+        
+      
+        
+
+        
+       
+
+       
+       
+       
+
+      
+
+
+    </script>
+    
+</body>
+</html>
