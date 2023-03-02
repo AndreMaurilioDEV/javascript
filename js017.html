@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica</title>
+   
+</head>
+<body>
+
+    <h1>Arrays + Objetos</h1>
+
+    <div id="output"></div>
+
+    <script>
+        var produtos = [          // ARRAY produtos com 3 indíces(sendo objetos)
+            {'nome':'lapis', 'preco': '1'},
+            {'nome':'caneta', 'preco': '1,50'},
+            {'nome':'cartolina', 'preco': '4'}
+        ]
+
+
+        var msg = ''
+
+        
+
+
+        for(var i = 0; i < produtos.length; i++){
+          // console.log (produtos[i]);
+
+
+          debugger; // debugger para o código e deixa o desenvolvedor analisar com o F12
+          
+            msg += "Produto: " + produtos[i].nome + "<br>";
+         
+        }
+
+        document.querySelector('#output').innerHTML = msg;
+
+        
+
+        
+       
+    </script>
+    
+</body>
+</html>

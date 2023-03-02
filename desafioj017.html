@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica</title>
+</head>
+<body>
+
+    <h3>Desafio JS017</h3>
+
+    <div id="output"></div>
+
+    <script>
+
+      
+            var user1 = {'nome': 'André','email':'andre@gmail.com'}
+
+            var user2 = {'nome': 'Maria','email':'maria@gmail.com'}
+
+            var user3 = {'nome': 'José','email':'jose@gmail.com'}
+
+            var users = [user1,user2,user3]
+    
+        
+
+        var msg = '';
+
+        for(var i = 0; i < users.length; i++){
+            msg += " <br> Nome: " + users[i].nome+ " --  Email: " + users[i].email + "<br>";
+            
+        }
+       
+
+
+
+
+
+        var output = document.querySelector("#output");
+        output.innerHTML = msg;
+
+
+
+    </script>
+    
+</body>
+</html>
