@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Exe 03</title>
+</head>
+<body>
+    <input type="text"  id="inptxt">
+    <button onclick="escreve()">Clique</button>
+    <div id="msg"></div>
+
+    <script>
+
+
+        // TODAS SERVEM PARA DEFINIR UM NOVO VALOR OU RECUPERAR O ATUAL
+        // text.Content - apenas textos dentro de tags
+        // inner.HTML - tags html dentro do elemento 
+        // .value - usado em formulários para saber informações digitadas pelo usuário
+
+        // Repetir o exemplo anterior com o nome do usuário digitado no input
+
+            var textoInput = document.querySelector("#inptxt") // textoInput guardando referência ao input
+            
+            function escreve(){
+                var nome = inptxt.value;  // Recupera o valor digitado do input(formulário) e guarda na var nome
+                document.querySelector("#msg").innerHTML = "Bem - Vindo, <strong>" + nome + "</strong> !!"; // atribui novo valor
+
+
+            }
+
+
+       
+    </script>
+</body>
+</html>

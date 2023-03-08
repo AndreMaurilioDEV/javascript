@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <h3>Funções</h3>
+
+    <script>
+
+        // LITERAL
+
+        /*
+        function somar(n1,n2){
+            return n1 + n2;
+        }
+        var soma = somar(10,30);
+        console.log("Resultado:  " + soma)*/
+
+
+
+
+        // Variável e anônima
+
+       /* var teste = function(){
+            console.log("teste")
+        };
+        teste();
+        // - com parâmetro: 
+        var teste = function(msg){
+            console.log(" teste2 " + msg)
+        };
+        teste("Parâmetro");*/
+
+
+
+        // ESCOPOS , IMPORTANTE NÃO TER VAR NO ESCOPO GLOBAL, POIS UMA PODE SOBRESCREVER A OUTRA. 
+        // CÓDIGO DENTRO DA FUNCTION É UMA BOA PRÁTICA
+
+        /*var x = 0; // global
+
+        function mostraX(){
+            var x = 10; // var x unicamente usado no escopo local da function
+
+            x = 20; // desse jeito, irá atribuir valor ao x do escopo global
+            y = 30; // não possui var nem no escopo global/local, ou seja, vai ser mostrado nos dois
+
+            console.log("Mostra x dentro: " + x);
+            console.log("Y dentro: " + y);
+        }
+        mostraX();
+        console.log("Mostra x fora: " + x);
+        console.log("Y fora: " + y);*/
+
+
+
+
+
+        /* IIFE - A FUNÇÃO TORNA-SE UMA EXPRESSÃO E NADA DENTRO DO ESCOPO DELA PODE SER ACESSADA
+
+
+        (function(){
+            var nome  = "Felipe";
+       })();
+        nome; // ERROR, pois não está no escopo da function */
+
+
+
+
+
+        // IFFE com var, armazenando o resultado da função para fora do seu escopo. NÃO A FUNÇÃO EM SI.
+
+        /*
+        var result = (function(){
+            var nome = "André";
+            return nome;
+        })();
+       console.log(result);*/
+
+
+
+       // PROPRIEDADE ARGUMENTS
+
+       /*
+       function somar(arr){
+        console.log(arr[0]+arr[1]+arr[2]+arr[3]);
+       }
+
+       somar([20,20,10,5])*/
+
+
+       /*
+       function somar(){
+
+        console.log(arguments); // representa todas os valores passados para o somar()
+        var result = 0; 
+        var x = 0;
+
+       while(arguments[x]){
+        result += arguments[x];
+        x++;
+
+       }
+
+        console.log("Resultado: " + result)
+       
+       }
+       somar(20,20,20,80)*/
+
+
+       /*(function(){
+
+
+        function calcularmedia(){
+
+            console.log(arguments); // armazena os argumentos passado pra media 
+            qtd = arguments.length;
+            var soma = 0;
+
+            for(var i = 0; i < arguments.length; i++){
+                soma += arguments[i];
+            }
+
+            return soma / qtd; 
+            
+            }
+
+            var media = calcularmedia(500,300);
+            console.log("Media é: " + media)
+
+       })();*/
+
+
+       (function(){
+
+        function valorIMC(peso,altura){
+
+            return peso/(altura*altura)
+        }
+
+        
+
+        function classificacaoIMC(imc){
+
+          if(imc < 16.9){
+            return 'Muito abaixo do peso';
+          }else if(imc <= 18.4){
+            return 'Abaixo do peso';
+          }else if(imc <= 24.9){
+            return 'Normal';
+          }
+
+        }
+
+        var imc = valorIMC(70, 1.70)
+        var classificacao = classificacaoIMC(imc);
+        console.log("IMC: " +imc + "  Classificação : " + classificacao)
+
+       })();
+
+
+
+             
+
+      
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

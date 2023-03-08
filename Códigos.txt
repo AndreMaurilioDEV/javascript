@@ -197,6 +197,12 @@ alert(media > 5)
          </script>
 
 
+        *textContent - muda o conteúdo diretamente do javaScript*
+        
+         .getElementeByID - traz a referência pra um objeto diretamente, usa-se o text.Content de forma direta.
+         .getElementeByClass - é uma coleção de objetos, precisando especificar com o índice [0],[1] para ser modificado com o text.Content, por exemplo.
+
+
 
 
 

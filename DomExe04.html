@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Exe 04</title>
+</head>
+
+<style>
+    #msg{
+        margin-top: 20px;
+    }
+</style>
+<body>
+
+    <input type="text"  id="inptxt" value="digite aqui" >
+    <div id="msg">Valor definido</div>
+
+    <script>
+
+        // Duas variáveis nome e sobrenome atribuidas ao input e deixar o input desabilitado 
+        var txt = document.querySelector("#inptxt")
+        var nome = "André"
+        var sobrenome = "Maurilio"
+        document.querySelector("#inptxt").value = nome + " " +  sobrenome ; // recupera o valor(.value) do input(digite aqui) e atribui novo valor com o = ""
+
+
+
+        //disabled no mundo HTML no input tem a mesma função do readOnly ou disabled no mundo JavaScript
+        document.querySelector("#inptxt").readOnly = true; // readOnly = true;
+        document.querySelector("#inptxt").disabled = true; // disabled = true; 
+
+
+
+
+        // Recuperação e atribuição pra o valor de #msg com .textContent
+        var recupera = document.querySelector("#msg").textContent = "Valor modificado";
+
+        
+
+
+
+    </script>
+    
+</body>
+</html>

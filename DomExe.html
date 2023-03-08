@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom EX 01</title>
+</head>
+<body>
+
+    <div id="msg"></div>
+
+    <script>
+
+        // Exibir nome do usuário na DIV
+        (function(){
+            var nome = prompt("Qual o seu nome: ");
+            document.querySelector("#msg").textContent = "Bem - Vindo, " +nome;
+
+
+        })();
+    </script>
+    
+</body>
+</html>

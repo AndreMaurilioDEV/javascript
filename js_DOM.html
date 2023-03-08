@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <h3>DOM</h3>
+
+    <main class="cmain " id="idmain">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <p id="pmain" class="pmain">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id fugiat nam saepe eius libero laborum?</p>
+    </main>
+
+    <section class="csection" id="idsection">
+        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+        <p class="cparagrafo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id fugiat nam saepe eius libero laborum?</p>
+        <p class="cparagrafo">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id fugiat nam saepe eius libero laborum?</p>
+
+    </section>
+
+    <script>
+
+        
+         /*   *textContent - muda o conteúdo diretamente do javaScript*
+        
+        .getElementeById - traz a referência pra um objeto diretamente, usa-se o text.Content de forma direta.
+        .getElementeByClassName - é uma coleção de objetos, precisando especificar com o índice [0],[1] para ser modificado com o text.Content, por exemplo.
+        */
+
+
+        // ById
+
+
+        document.getElementById('idmain')
+        document.getElementById('pmain')
+        document.getElementById('pmain').textContent = 'Texto alterado'
+
+
+
+        // ByClass com mais de um objeto
+        document.getElementsByClassName('cparagrafo')[0].textContent = 'Primeiro P alterado'        
+        document.getElementsByClassName('cparagrafo')[1].textContent = 'Segundo P alterado'
+
+
+
+        // ByClass com um único objeto
+        document.getElementsByClassName('pmain')[0].textContent = 'P alterado' 
+        //// Mesmo sendo único é preciso especificar através do índice(sempre 0. nesse caso)     
+        
+        
+        // By TagName
+        document.getElementsByTagName('p')
+        // Mais de uma tag P: 
+        document.getElementsByTagName('p')[2]
+
+        // QuerySelector - seleciona o elemento igual o css: # para id/ . para class e elementos filhos
+        document.querySelector("#idmain")
+        document.querySelector("#idmain p") // pega tag p da main com id = idmain
+        document.querySelector("#idmain h2").textContent = "Modificado"
+
+        // QuerySelectorAll: diferença que retorna coleção de objetos. Precisando indicar com índice, mesmo se tiver apenas 1 elemento.
+        document.querySelector("#idmain h2")[0].textContent = "Alterado"
+
+
+
+    </script>
+    
+</body>
+</html>
