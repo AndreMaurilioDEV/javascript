@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="belugaframe.js"></script>
+    <style>
+
+        table {
+        border-collapse: collapse;
+          width: 100%;
+          height: 100%;
+            }
+
+            .container{
+                width: 80%;
+                height: 250px
+            }
+           
+
+        table, th, td {
+            border-bottom: 1px solid;
+            text-align: center;
+        }
+
+        h2{
+            padding: 20px 0px;
+        }
+
+        section{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+
+    <section>
+        <div class="container">
+            <h2>Médias dos Alunos</h2>
+            <table class="table js-tabela">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Nota 1</th>
+                        <th>Nota 2</th>
+                        <th>Nota 3</th>
+                        <th>Nota 4</th>
+                        <th>Média</th>
+                    </tr>
+            
+                </thead>
+                <tbody>
+                    <tr class="aluno">
+                        <td class="aluno-nome">André</td>
+                        <td class="aluno-n1">10</td>
+                        <td class="aluno-n2">8</td>
+                        <td class="aluno-n3">6.5</td>
+                        <td class="aluno-n4">5</td>
+                        <td class="aluno-m"></td>
+                       
+                    </tr>
+            
+                    <tr class="aluno">
+                        <td class="aluno-nome">André</td>
+                        <td class="aluno-n1">10</td>
+                        <td class="aluno-n2">8</td>
+                        <td class="aluno-n3">6.5</td>
+                        <td class="aluno-n4">5</td>
+                        <td class="aluno-m"></td>
+                       
+                    </tr>
+            
+                    <tr class="aluno">
+                        <td class="aluno-nome">André</td>
+                        <td class="aluno-n1">10</td>
+                        <td class="aluno-n2">8</td>
+                        <td class="aluno-n3">6.5</td>
+                        <td class="aluno-n4">5</td>
+                        <td class="aluno-m"></td>
+                       
+                    </tr>
+            
+                    <tr class="aluno">
+                        <td class="aluno-nome">André</td>
+                        <td class="aluno-n1">10</td>
+                        <td class="aluno-n2">8</td>
+                        <td class="aluno-n3">6.5</td>
+                        <td class="aluno-n4">5</td>
+                        <td class="aluno-m"></td>
+                       
+                    </tr>
+            
+                </tbody>
+            </table>
+            
+        </div>
+    </section>
+
+    <script>
+
+
+
+        (function(){
+
+          var  trs = document.querySelectorAll(".js-tabela tbody .aluno") // armazena a linha .aluno na var trs
+
+          var x = 0;
+
+          while(trs[x]){
+            var linhaAluno = trs[x]; // recupera os valores das linhas para a var linhaAluno
+            console.log(linhaAluno)
+            
+
+            var n1,n2,n3,n4, media;
+
+            var tds = linhaAluno.querySelectorAll("td") // recupera os valores de td(n1,n2 etc) para var tds através da linhaAluno.querySelectorAll
+
+           n1 = pegaNota(tds[1]); // n1 vai pegar a nota1 da td 1 
+           n2 = pegaNota(tds[2]); // n2 vai pegar a nota2 da td 2
+           n3 = pegaNota(tds[3]); // n3 vai pegar a nota3 da td 3
+           n4 = pegaNota(tds[4]); // n4 vai pegar a nota4 da td 4
+
+           media = calcularmedia(n1,n2,n3,n4); // recebe cada n1,n2,n3 e n4 da td 
+
+           tds.querySelector(".aluno-m").textContent = media; // acessa o td da media(aluno-m) através da var tds que tem acesso a todas td
+           // textContent atribui valor com a var media que retorna o calculo da media através da function calcularmedia()
+
+            x++;
+          }
+
+          function pegaNota(td){
+
+            return parseFloat(td.textContent); // pega o conteúdo de cada td(ex: nota 1 = 10) e transforma em number
+
+          }
+
+        })();
+    </script>
+</body>
+</html>
