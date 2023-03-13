@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +7,7 @@
     <title>Document</title>
     <script src="belugaframe.js"></script>
     <style>
-
-        table {
+         table {
         border-collapse: collapse;
           width: 100%;
           height: 100%;
@@ -36,10 +35,8 @@
         }
     </style>
 </head>
-
 <body>
 
-    
 
     <section>
         <div class="container">
@@ -103,8 +100,11 @@
         </div>
     </section>
 
-    <script>
 
+
+
+    <script>
+        
         /*calcular a media de alunos com 4 notas de uma tabela
          1- cria function
          2- armazena linha do aluno em uma var
@@ -116,33 +116,26 @@
          7- declarar var pra calcular media a partir do .apply
          8- atribuir a var da media na media da tabela
          */
-        
-
 
 
         (function(){
 
-          var  trs = document.querySelectorAll(".js-tabela tbody .aluno") // armazena a linha .aluno na var trs
-          var x = 0;
+           var trs = document.querySelectorAll(".js-tabela tbody .aluno")
+           var x = 0;
 
-          while(trs[x]){
-            var linhaAluno = trs[x]; // recupera os valores das linhas para a var linhaAluno
-            console.log(linhaAluno)
-            var tds = linhaAluno.querySelectorAll("td") // recupera os valores de td(n1,n2 etc) para var tds através da linhaAluno.querySelectorAll
-            var notas = recuperarNumerosDeColunas(tds);
-            // chamada de função : calcularmedia.call(this, n1, n2) -  parâmetro chamado com this
-            // chamada de função: calcularmedia.apply(this, n1, n2) -  parâmetro chamado com this, porém é um array
-          // media = calcularmedia(n1,n2,n3,n4); // recebe cada n1,n2,n3 e n4 da td 
-          var media = calcularmedia.apply(this, notas); // as notas estão em um array
-
-           linhaAluno.querySelector(".aluno-m").textContent = media; // acessa o td da media(aluno-m) através da var tds que tem acesso a todas td
-           // textContent atribui valor com a var media que retorna o calculo da media através da function calcularmedia()
+           while(trs[x]){
+            var linha = trs[x];
+            var tds = linha.querySelectorAll("td")
+            var notas = valorColunas(tds);
+            var media = calcularmedia.apply(this, notas);
+            linha.querySelector(".js-tabela tbody .aluno .aluno-m").textContent = media;
             x++;
-          }
+           }
 
-         function recuperarNumerosDeColunas(tds){
+
+           function valorColunas (tds){
             var x = 0;
-            var arr =[];
+            var arr = [];
             while(tds[x]){
                 if(!isNaN(tds[x].textContent) && tds[x].textContent !== ''){ // se o tds[x] puder se convertido para number e não for uma string vazia(aluno-m)
                     arr.push(parseFloat(tds[x].textContent)); // colocando notas(tds) em um array
@@ -156,7 +149,15 @@
             return arr;
          }
 
+        
+
+    
+
         })();
+
+
+
     </script>
+    
 </body>
 </html>

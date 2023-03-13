@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Objetos</title>
+</head>
+<body>
+
+    <h3>Objetos  + Função Construtora</h3>
+
+    <script>
+        //Função que serve pra adicionar instâncias ao objeto
+
+        function Caneta(preco, cor){ // Função construtora normalmente inicia-se com Maisculo
+            //this.preco = 1;
+            this.preco = preco || 1; // agora o preco da caneta será o que for passada pelo parâmetro da function ou 1(se não for passado).
+           // this.cor = "preta"
+           this.cor = cor || 'black'
+            this.mudarCor = function(cor){
+            this.cor = cor; // a cor do this, será igual a novar cor passada pelo parâmetro da função
+            }
+        }
+
+        var caneta1 = new Caneta(3, 'vermelha'); // passado os dois parâmetro
+        //var caneta1 = new Caneta(3); // apenas um e a cor será black
+
+        // operador new com this cria um objeto vazio. No objeto vazio this, foi colocado preco, cor e uma função.
+
+
+        // TORNANDO COR PRIVADA FORA DA FUNCTION
+
+        
+        function Caneta(preco, cor){
+         
+            this.preco = preco || 1;
+           var color = cor 
+            this.mudarCor = function(cor){
+            color = cor; 
+            }
+            this.pegaCor = function(){
+            return color;
+        }
+        }
+
+        //No console:   
+        // caneta1.cor = undefinid // cor não é mais definida com this
+        // caneta1.pegaCor = undefinid // sem cor definida ainda
+        // caneta1.mudarCor('blue') // cor definida apenas pelo parâmetro agora (cor)
+        // caneta1.pegarCor = 'blue' // pegaCor funciona pois a cor foi passada para a var color. var color = cor e retonar color que armazena cor.
+
+
+        var caneta1 = new Caneta(3, 'vermelha');
+    </script>
+
+    
+</body>
+</html>

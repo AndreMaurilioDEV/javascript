@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Objetos</title>
+</head>
+<body>
+
+    <script>
+        // Objetos possui propriedades e metódos
+
+        var hoje = new Date(); // Date = objeto
+
+       // hoje =  Mon Mar 13 2023 14:51:31 GMT-0300
+       
+
+       //hoje.getDay = 1(dia da semana - segunda)
+       // 0 - domingo / 1 - segunda / 2 - terça-feira etc...
+
+
+
+        /*  Array é um objeto, são passados por referência. Qualquer outro tipo é por valor.
+        Uma string/number/booleano etc pode ser igual ao outro em valores, como: andre == andre / 9 == 9 / true == true
+       Uma array não pode ser igual a outra, independente se for [1] == [1]. Possui msm valores, mas são objetos diferentes.
+
+
+
+       var x = [0];
+
+       var y = x // são a mesma array, só que pode ser acessada de forma diferente. y não vai ter valor de x, e sim a array.
+       x.push(1)
+       y.push(5)
+
+       */
+
+        var n = 0;
+
+        function mudarN(){
+            var n2 = n;
+            console.log(++n2)
+        }
+
+        mudarN(n);
+        console.log(n);
+
+        // A n2 é 1 e a n continua sendo zero, ou seja, não se igualaram.
+       
+
+       
+       
+
+    </script>
+    
+</body>
+</html>

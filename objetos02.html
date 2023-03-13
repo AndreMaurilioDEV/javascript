@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Objetos </title>
+</head>
+<body>
+
+    <script>
+
+        function mudarCor(cor){ // funcão externa
+            console.log(this)
+         this.cor = cor;
+        }
+
+        caneta1 = {
+            // forma pior com function em cada objeto: mudarCor: function(cor); (sem declarar a funcão acima)
+            "cor": 'blue', mudarCor : mudarCor // função vinculada ao objeto
+        }
+
+        caneta2 = {
+            // forma pior com function em cada objeto: mudarCor: function(cor); (sem declarar a funcão acima)
+            "cor": 'green', mudarCor : mudarCor
+        }
+
+
+        caneta3 = {
+            // forma pior com function em cada objeto: mudarCor: function(cor); (sem declarar a funcão acima)
+            "cor": 'red', mudarCor : mudarCor
+        }
+
+        caneta1.mudarCor('Yellow')
+        caneta2.mudarCor('Purple')
+        caneta3.mudarCor('Black')
+    </script>
+    
+</body>
+</html>
