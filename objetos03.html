@@ -32,10 +32,12 @@
         // TORNANDO COR PRIVADA FORA DA FUNCTION
 
         
-        function Caneta(preco, cor){
+        function Caneta(preco, cor){ // propriedade privada é so definir a var e pública(acessiveis) reserva no this
+            // na pública qualquer caneta1.preco será mostrado no console
          
-            this.preco = preco || 1;
-           var color = cor 
+
+            this.preco = preco || 1; // PUBLICA - ACESSIVEL
+           var color = cor  // PRIVADO
             this.mudarCor = function(cor){
             color = cor; 
             }
