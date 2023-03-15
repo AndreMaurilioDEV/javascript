@@ -13,17 +13,17 @@
     <script>
         //Função que serve pra adicionar instâncias ao objeto
 
-        function Caneta(preco, cor){ // Função construtora normalmente inicia-se com Maisculo
+        //function Caneta(preco, cor){ // Função construtora normalmente inicia-se com Maisculo
             //this.preco = 1;
-            this.preco = preco || 1; // agora o preco da caneta será o que for passada pelo parâmetro da function ou 1(se não for passado).
+            //this.preco = preco || 1; // agora o preco da caneta será o que for passada pelo parâmetro da function ou 1(se não for passado).
            // this.cor = "preta"
-           this.cor = cor || 'black'
-            this.mudarCor = function(cor){
-            this.cor = cor; // a cor do this, será igual a novar cor passada pelo parâmetro da função
-            }
-        }
+          // this.cor = cor || 'black'
+          //  this.mudarCor = function(cor){
+          //  this.cor = cor; // a cor do this, será igual a novar cor passada pelo parâmetro da função
+          //  }
+       // }
 
-        var caneta1 = new Caneta(3, 'vermelha'); // passado os dois parâmetro
+       // var caneta1 = new Caneta(3, 'vermelha'); // passado os dois parâmetro
         //var caneta1 = new Caneta(3); // apenas um e a cor será black
 
         // operador new com this cria um objeto vazio. No objeto vazio this, foi colocado preco, cor e uma função.
@@ -32,18 +32,27 @@
         // TORNANDO COR PRIVADA FORA DA FUNCTION
 
         
-        function Caneta(preco, cor){ // propriedade privada é so definir a var e pública(acessiveis) reserva no this
-            // na pública qualquer caneta1.preco será mostrado no console
-         
 
-            this.preco = preco || 1; // PUBLICA - ACESSIVEL
-           var color = cor  // PRIVADO
+        var Caneta = (function(window){
+
+             //function Caneta(preco, cor){ // propriedade privada é so definir a var e pública(acessiveis) reserva no this
+            // na pública qualquer caneta1.preco será mostrado no console
+
+           function _Caneta(preco,cor){
+
+             var color = cor  // PRIVADO
+
+             // PUBLICA - ACESSIVEL
+            this.preco = preco || 1; 
+            this.cor = cor;
             this.mudarCor = function(cor){
             color = cor; 
             }
             this.pegaCor = function(){
             return color;
         }
+         
+            
         }
 
         //No console:   
@@ -53,7 +62,20 @@
         // caneta1.pegarCor = 'blue' // pegaCor funciona pois a cor foi passada para a var color. var color = cor e retonar color que armazena cor.
 
 
-        var caneta1 = new Caneta(3, 'vermelha');
+        //var caneta1 = new Caneta(3,'red');
+
+        return _Caneta;
+
+       
+        })(window);
+
+        /* - Com uma IFEE a function Caneta não funciona mais no escopo global. Ex: var teste = new Caneta(); (var teste não foi declarada no escopo da function Caneta)
+        - é necessário colocar a function Caneta no escopo global. Para isso: A function IFEE com a function Caneta vão ser armazenada em uma nova var
+        - Desse jeito é possivel criar novas variáveis com new _Caneta fora do escopo, invés de apenas defini-las com var caneta1 = new Caneta(3,'red') no escopo local.
+        - var novaCaneta = new _Caneta();
+         
+        */
+       
     </script>
 
     
