@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Exemplo 01</title>
+    <style>
+        label{
+            display: block;
+            margin: 5px 0px;
+        }
+
+        #btn{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="#" method='post'>
+        <label for="inpUser">Usuário</label>
+        <input type="text" name="User" id="inpUser">
+
+        <label for="inpSenha">Senha</label>
+        <input type="password" name="Senha" id="inpSenha">
+        <div id="incorrect"></div>
+
+       <button type="submit" id="btn">Enviar</button>
+    </form>
+
+    <script>
+
+        (function(){
+            'use strict';
+
+            var txtUser = document.querySelector("#inpUser");
+            var txtSenha = document.querySelector("#inpSenha");
+            var btn = document.querySelector("#btn");
+            var incorrect = document.querySelector("#incorrect")
+            var form = document.querySelector('form')
+
+            //btn.addEventListener('click',function(){ // o alert de vazio tem que ser válido apenas com o click no botao, não com enter. ENTAO:
+            form.addEventListener('submit',function(evento){ // valida formulário a partir do enter no teclado/enviar no botao com evento submit
+                
+            
+               
+
+                //if(txtUser.value === '' || txtSenha.value === ""){ 
+                if( !txtUser.value  || !txtSenha.value ){ // OBS: .textContent é o que está dentro de uma div e value em um input.
+                    // Qualquer string é true, então o value com ! será false, logo não tem nada no value.
+                    alert("É VAZIO")
+                    incorrect.textContent = 'Senha ou Login incorretos'
+                    evento.preventDefault(); // previne o comportamento padrão de envio, evitando o envio do form mesmo sem user ou senha.
+                    //ex: evento padrão da tag A: carregar a página ao clicar. Mas, com prevent, ele previne esse comportamento.
+
+
+
+                    
+
+
+
+                }
+            })
+
+
+
+
+
+
+        })();
+        
+    </script>
+    
+</body>
+</html>

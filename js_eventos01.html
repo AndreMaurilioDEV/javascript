@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript - Eventos</title>
+</head>
+<body>
+
+    <button id="btn2">butao 2</button>
+    <button id="btn3">botao 3</button>
+
+    <script>
+
+        // DOM LEVEL 0 - onclick
+        var btn2 = document.getElementById('btn2');
+        btn2.onclick = clicar; // se receber a funcão clicar() ocorre erro. 
+        function clicar(){
+            alert("clicou dom level 0")
+        }
+
+
+        // DOM LEVEL 2 - apenas click
+        // é possivel atrelar mais de um evento no elemento html
+
+        var btn3 = document.getElementById('btn3')
+        btn3.addEventListener("click", function(){
+            alert("clicou dom level 2 ")
+        })
+        btn3.addEventListener("click", function(){
+            alert("clicou dom level 2 com outro evento ")
+        })
+
+
+
+    </script>
+    
+</body>
+</html>

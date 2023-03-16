@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript -  Delegação de eventos</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <ul>
+        <li>lista 1</li>
+        <li>lista 2</li>
+        <li>lista 3</li>
+        </ul>
+
+    </div>
+
+    <script>
+        var ul = document.querySelector('ul');
+
+        var lis = document.querySelectorAll("li");
+
+        //lis[0].addEventListener('click',function(e){ // não é possivel atribuir um evento a uma lista diretamente. adiciona-se o [] a lista.
+            //console.log("Clicou na LI") // funciona apenas na primeira LI
+       // })
+
+       /*
+        var x = 0
+        while(lis[x]){
+
+            lis[x].addEventListener('click', function(){
+                console.log('Clicou na li');
+                
+            })
+
+            x++;
+           
+        }*/
+
+        // OU - invés de usar repetição
+
+        ul.addEventListener('click',function(e){
+            e.stopPropagation();
+            console.log(this);  // Toda ul
+            console.log(e.currentTarget); // Toda ul, objeto atrelado ao evento
+            console.log(e.target); // apenas a LI, objeto que disparou o evento, que está interno a ul
+
+            if(e.target.nodeName === 'LI'){
+                alert("CLICOU NA LI")
+
+            }
+
+        })
+
+
+
+    </script>
+    
+</body>
+</html>
