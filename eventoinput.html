@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <div class="container">
+    <textarea  id="txtarea" cols="50" rows="10" maxlength="50"></textarea>
+       <div id="csscontainer" style="display: none;"> Restam
+         <span id="msgspan"></span> 
+         Caracteres</div>
+   </div>
+
+   <script>
+
+    (function(){
+
+    'use strict'
+
+    // DOM
+        
+    var msgspan = document.querySelector("#msgspan")
+    var txtarea = document.querySelector("#txtarea");
+    var csscontainer = document.querySelector("#csscontainer")
+    var maxima = txtarea.maxLength;
+    mostrarCaracteres(maxima);
+
+    
+
+
+    function divBlock(){
+        csscontainer.style.display = 'block';
+    }
+    divBlock();
+
+
+
+    txtarea.addEventListener('input', caracteres);
+
+
+    function caracteres(){
+        var digitados = this.value.length;
+        var caracteresSobra = maxima - digitados;
+        mostrarCaracteres(caracteresSobra);
+    }
+
+    function mostrarCaracteres(n){
+        msgspan.textContent = n;
+    }
+
+
+    })();
+
+
+   </script>
+    
+</body>
+</html>

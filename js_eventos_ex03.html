@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="#">
+
+        <textarea  id="txtarea" cols="50" rows="10" disabled>Contrato de serviços prestados</textarea>
+        <br>
+        <label for="chk">
+            <input type="checkbox"  id="chk" checked> Li e aceitos os termos desse contrato
+        </label>
+        <br>
+        <input type="submit" value="Continuar" id="btn">
+
+        <script>
+
+            var btn = document.querySelector("#btn")
+            var check = document.querySelector('#chk')
+
+            toggleBtn(); // botao desabilitado quando a checkbox não for checkada no momento de recarregar página
+
+            check.addEventListener('change', toggleBtn);
+            // botao desabilitado com checkbox nao checkada
+
+            function toggleBtn(){
+                btn.disabled =  !chk.checked; // botão desabilitado quando a checkbox não tiver checkada
+            }
+
+            
+        </script>
+
+
+    </form>
+    
+</body>
+</html>

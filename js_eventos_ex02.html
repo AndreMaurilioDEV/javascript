@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema - Eventos</title>
+</head>
+<body>
+
+    <div class="container">
+        <textarea id="msg" cols="50" rows="10" maxlength="80"></textarea>
+        
+     <div id="restaContainer" style="display: none;"> Restam <span id="resta">
+
+     </span> caracteres</div>
+     
+
+    </div>
+
+    <script>
+
+        // Mostra em uma span o numero de caracteres restantes e indicar quando faltar apenas 10 
+
+        (function(){
+
+            
+
+            'use strict';
+
+            //DOM 
+            var resta = document.getElementById('resta');
+            var txtarea = document.querySelector("#msg");
+            var restaContainer = document.getElementById('restaContainer');
+
+            //RECUPERAÇÃO VALORES
+            var maxima = txtarea.maxLength; // pega o maxlength do textarea no html
+            mostrarCaracteresRestantes(maxima);
+            //resta.textContent = maxima;
+
+
+            // MOSTRAR CONTAINER
+
+
+            // caso o javascript nao funciona pra fazer o calculo de numero caracteres, então a div que mostra isso com span vai ter um display none pré-definido;
+
+
+            function mostrarContainer(){
+                restaContainer.style.display = 'block';  // css inline dentro do js
+            }
+            // se o java funcionar, essa propriedade vai ser executada e a div irá virar block, mostrando o conteudo do span.
+
+            mostrarContainer();
+
+
+
+            // EVENTO INPUT PRA TXT AREA CHAMANDO A FUNÇÃO checkLenght
+            txtarea.addEventListener('input', checkLenght); // é executado logo quando tiver qualquer entrada de dados. Até o colar do usuário.
+            // EVENTO IDEAL NESSE CASO: INPUT INVÉS DE KEY
+
+
+            // FUNÇÃO
+            function checkLenght(e){
+               
+                var numeroLetrasDigitadas = this.value.length;  // this.value é o textarea e lenght consegue saber quantos caracteres dentro dele.
+                var caracteresRestantes = parseInt(maxima) - parseInt(numeroLetrasDigitadas);
+                //Cálculo
+                mostrarCaracteresRestantes(caracteresRestantes); // Função com parâmetro sendo o cálculo retornando pra o n
+            }
+
+            function mostrarCaracteresRestantes(n){ // Função com parâmetro n
+                resta.textContent = n; // Atribui esse parâmetro ao span
+
+            }
+        })();
+    </script>
+    
+</body>
+</html>
