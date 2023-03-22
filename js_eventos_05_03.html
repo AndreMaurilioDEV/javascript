@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas - javascript</title>
+
+    <style>
+
+        .done{
+            text-decoration: line-through;
+            color: #a9a9a9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        
+        <input type="text"  id="txtTask">
+        
+        <button id="btn">Cadastrar tarefa</button>
+
+        <ul>
+            <li>Estudar JavaScript - Funções</li>
+            <li>Estudar JavaScript - Eventos </li>
+            <li>Ler Livro</li>
+        </ul>
+
+    </div>
+
+
+    <script>
+
+        // Acrescentar eventos de click em cada li para marcar como feito
+
+        (function(){
+
+            'use strict';
+
+            var txtTask = document.querySelector("#txtTask");
+            var botao = document.querySelector("#btn");
+            var lista = document.querySelector('ul');
+            var lis = lista.querySelectorAll('li'); // pega as lis so dentro dessa lista
+
+           
+            txtTask.addEventListener('keyup', addTaskEnter); 
+
+
+             // adicionar com o enter 
+             function addTaskEnter(e){ 
+                if(e.keyCode === 13){ 
+                    adicionarTask(); 
+                }
+
+            }
+
+            // adiciona com click do botão
+            botao.addEventListener('click', adicionarTask); 
+           function adicionarTask(){
+                var task = '<li>' + txtTask.value + '</li>'; 
+                lista.innerHTML += task; 
+                txtTask.value = '';  
+                txtTask.focus(); 
+            }
+
+            for(var i = 0; i < lis.length; i++){
+                lis[i].addEventListener('click', toogleDone); // executa a função toggleDone ao clicar em cada li.
+            }
+
+            function toogleDone(){ 
+
+                //this.classList.add('teste'); // adiciona um classe a um elemento html a partir do JS
+                //this.classList.remove('teste'); // Remove
+
+
+                // toggle é a alternância entre classList.add e classList.remove 
+                this.classList.toggle('done'); //adiciona um classe done pra o li(this) quando clicar(evento) e tira ao clicar novamente(evento).
+
+            }
+
+        })();
+    </script>
+    
+</body>
+</html>

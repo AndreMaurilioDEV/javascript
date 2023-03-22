@@ -21,35 +21,30 @@
 
     'use strict'
 
-    // DOM
-        
-    var msgspan = document.querySelector("#msgspan")
-    var txtarea = document.querySelector("#txtarea");
-    var csscontainer = document.querySelector("#csscontainer")
-    var maxima = txtarea.maxLength;
-    mostrarCaracteres(maxima);
+    var txtarea = document.getElementById('txtarea')
+    var span = document.getElementById('msgspan')
+    var containercss = document.getElementById('csscontainer')
+    var maxima = txtarea.maxLength
+    mostrarSpan(maxima);
 
-    
+    txtarea.addEventListener('input', restantes);
 
-
-    function divBlock(){
-        csscontainer.style.display = 'block';
+    function containerJava(){
+        containercss.style.display = 'block';
     }
-    divBlock();
+
+    containerJava();
 
 
-
-    txtarea.addEventListener('input', caracteres);
-
-
-    function caracteres(){
+    function restantes(){
         var digitados = this.value.length;
-        var caracteresSobra = maxima - digitados;
-        mostrarCaracteres(caracteresSobra);
+        var caracteresRestantes = parseInt(maxima) - parseInt(digitados);
+        mostrarSpan(caracteresRestantes)
     }
 
-    function mostrarCaracteres(n){
-        msgspan.textContent = n;
+    function mostrarSpan(n){
+        span.textContent = n;
+
     }
 
 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas - javascript</title>
+</head>
+<body>
+
+    <div class="container">
+
+        
+        <input type="text"  id="txtTask">
+        
+        <button id="btn">Cadastrar tarefa</button>
+
+        <ul>
+            <li>Estudar JavaScript - Funções</li>
+            <li>Estudar JavaScript - Eventos </li>
+            <li>Ler Livro</li>
+        </ul>
+
+
+
+
+
+    </div>
+
+
+    <script>
+
+        // Fazer uma lista onde o usuário possar adicionar novos itens(li) na lista(ul) através de input e botão.
+
+        (function(){
+
+            'use strict'
+
+            var txtTask = document.querySelector("#txtTask");
+            var botao = document.querySelector("#btn");
+            var lista = document.querySelector('ul')
+
+            botao.addEventListener('click', function(){
+                var task = '<li>' + txtTask.value + '</li>'; // recupera o valor do input(tarefa digitada) como li 
+                lista.innerHTML += task; // adiciona os itens ja existente com a tarefa nova na lista
+
+                txtTask.value = ''; // limpa o input 
+                txtTask.focus(); // volta o foco pra o input após o usuário apertar o botão
+            })
+
+        })();
+    </script>
+    
+</body>
+</html>

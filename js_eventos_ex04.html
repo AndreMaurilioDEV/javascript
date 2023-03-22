@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+</head>
+<body>
+
+    <div id="container">
+
+        <button>botão 1</button>
+        <button>botão 2</button>
+        <button>botão 3</button>
+
+    </div>
+
+    <script>
+
+        (function(){
+
+            // ADIÇÃO DE EVENTO EM UMA COLEÇÃO E MOSTRAR O CONTEÚDO DO BUTTON AO SER CLICADO ( mais de 1 um button)
+
+            var btns = document.getElementsByTagName('button'); // armazenando os buttons em uma var
+
+            for(i = 0; i < btns.length ; i++){
+                btns[i].addEventListener('click', clicou); // evento em uma coleçao usando o for
+            }
+
+            function clicou(){
+                console.log(this.textContent); // exibindo o conteudo do button no console
+            }
+
+            'use sctrict'
+
+        })();
+    </script>
+    
+</body>
+</html>
