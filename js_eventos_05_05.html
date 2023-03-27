@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas - javascript</title>
+
+    <style>
+
+        .done{
+            text-decoration: line-through;
+            color: #a9a9a9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        
+        <input type="text"  id="txtTask">
+        
+        <button id="btn">Cadastrar tarefa</button>
+
+        <ul>
+            <li>Estudar JavaScript - Funções</li>
+            <li>Estudar JavaScript - Eventos </li>
+            <li>Ler Livro</li>
+        </ul>
+
+    </div>
+
+
+    <script>
+
+        // Problema de excesso de listener resolvido com delegação de eventos
+
+        (function(){
+
+            'use strict';
+
+            var txtTask = document.querySelector("#txtTask");
+            var botao = document.querySelector("#btn");
+            var lista = document.querySelector('ul');
+            var lis = lista.querySelectorAll('li'); // pega as lis so dentro dessa lista
+
+           
+            txtTask.addEventListener('keyup', addTaskEnter); 
+
+
+             // adicionar com o enter 
+             function addTaskEnter(e){ 
+                if(e.keyCode === 13){ 
+                    adicionarTask(); 
+                }
+
+            }
+
+            // adiciona com click do botão
+            botao.addEventListener('click', adicionarTask); 
+           function adicionarTask(){
+               
+
+               var li = document.createElement('li'); // cria um elemento no DOM solta na memória
+               var text = document.createTextNode(txtTask.value); // cria um texto temporário(value do input) pra atrelar ao DOM depois
+               li.appendChild(text); // acrescenta o valor do text(filho) a li
+               lista.appendChild(li); // acrescenta a li a lista(ul)
+
+                txtTask.value = '';  
+                txtTask.focus(); 
+ 
+            }
+
+            lista.addEventListener('click', function(e){ // evento na UL
+                if(e.target.nodeName === 'LI'){ // se o e.target for uma LI. target que dispara do elemento filho pra o pai dentro da ul
+                    toogleDone(e.target); // executa a função toggle nesse evento(li)
+                } 
+            })
+
+            function toogleDone(li){ 
+
+                li.classList.toggle('done');
+
+            }
+
+        })();
+    </script>
+    
+</body>
+</html>
