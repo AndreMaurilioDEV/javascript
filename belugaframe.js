@@ -14,7 +14,7 @@ function calcularmedia(){
 
    }
 
-    return soma / qtd; 
+    return (soma / qtd).toFixed(2); 
     
     }
 
