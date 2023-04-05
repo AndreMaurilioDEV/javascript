@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5,'andre',6,'pcpc']
+
+        // arr.metodo(elemento,indice,objeto)
+
+
+        //EVERY
+        var soNumeros = arr.every(function(el){ // retorna true se cada(every) elemento(el) da array for number
+            return typeof el === 'number';
+        });
+        console.log(soNumeros);
+
+
+        //SOME
+        var aoMenosUmNumero = arr.some(function(el){ // retorna true se algum(some) elemento(el) da array for number
+            return typeof el === 'number';
+        });
+        console.log(aoMenosUmNumero);
+
+
+
+        // FILTER
+        var numeros = arr.filter(function(el){ // filtra os numeros da array e mostra, não retornando 
+        //somente booleano como os anteriores.
+            return typeof el === 'number';
+        });
+        console.log(numeros);
+
+
+        //FOREACH
+        arr.forEach(function(el, i, arr){ // executa uma função para cada elemento da array
+            console.log('el = ' + el + ' i = ' + i + ' array = ' + arr.toString);
+
+        });
+
+
+
+        //INDEXOF
+        var posicaoStr1 = arr.indexOf('andre'); // retorna a posicao da string andre dentro da array
+        console.log(posicaoStr1);
+
+
+
+
+        // MAP
+        var numeros = numeros.map(function(el, i, arr){ // multiplica cada elemento por seu índice e retorna um 
+            // novo array modificado
+            return el * i;
+        })
+        console.log(numeros);
+
+
+
+
+        // CONCAT
+        var arr2 = arr.concat(numeros); // concantena o array original com o modificado anteriormente
+        console.log(arr2);
+
+
+
+
+        // JOIN
+        var str = arr2.join(' -- '); // junta os elementos do arr2 com o arr original, mas usa o -- como separador
+        console.log(str);
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio</title>
+</head>
+<body>
+
+    
+
+    <script>
+        function sortear(n){ // funcao que retorna um sorteio de 0 a n
+            var _n = n; // usuário digita o n - sortear(10)
+            var nSorteio = Math.random(); // número random
+            nSorteio = nSorteio * _n; // número random de 0 a 10 -- _n multiplicado
+            nSorteio = Math.floor(nSorteio); // arredonda esse número random de 0 a 10 pra baixo
+            return nSorteio; // retorna o numero sorteado
+         
+        }
+
+        function trocarImagem(){
+            var n = sortear(5) + 1;
+
+            document.querySelector('body').style.backgroundImage = "url(img-sorteio/"+ n + ".jpg)";
+        }
+
+        trocarImagem();
+
+       
+    </script>
+    
+</body>
+</html>
