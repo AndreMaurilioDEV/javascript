@@ -74,6 +74,79 @@
 
 
 
+        //PUSH - modifica a array
+        arr.push('novo item'); // adiciona um elemento no final
+        console.log(arr);
+
+         arr.push('novo', 'item'); // adiciona dois elementos no final
+        console.log(arr);
+
+
+        // POP - modifica a array
+        var ultimoItem = arr.pop(); // remove o ultimo elemento e o retorna a var
+
+
+        // SHIFT - modifica a array
+        var primeiroItem = arr.shift() // remove o primeiro e o retorna a var
+
+
+        // UNSHIFT - modifica a array
+        arr.unshift('item'); // adiciona elemento no começo da array
+
+
+
+        // REDUCE - nao modifica
+        // var reduce = arr.reduce(parametro1, parametro2, indice)
+        // reduce = parametro1 + parametro2
+
+        var somaARR = numeros.reduce(function(anterior, atual){
+            return anterior+atual; // vai somar os numeros do array numeros
+        });
+
+        var stringReduce = ['1','2','3','4'].reduce(function(i,a){
+            return i+a; // vai concatenar, já que é string
+        });
+
+
+
+
+
+        
+        // REVERSE - modifica a array
+
+        var rev = ['1','2','3','4'];
+        rev.reverse();
+        // array vai comecar ao contrário
+
+
+
+
+
+        // SLICE - nao modifica
+        arr2.slice(2); // vai mostrar a array a partir da posição 2
+        // OBS: posição começa por 1, invés de 0 como índice
+
+
+        arr2.slice(2,5); // pega a posição de 2 até 5
+
+
+
+
+        // SPLICE - MODIFICA
+
+        //splice(posição inicial, quantidade de elementos para remover, elementos para adicionar);
+        arr2.splice(2,3,'novo item'); // a partir da segunda posição, vai remover 3 elementos e adicionar item
+        arr2.splice(2,0,'mamão','melão');
+
+        var arr3 = arr2.splice(2,3,'novo item');
+        // vai retornar os itens removidos para var arr3
+
+
+
+
+
+
+
 
 
 

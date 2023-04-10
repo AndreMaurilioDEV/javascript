@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt nostrum cumque error earum alias libero harum nam autem et, ullam porro qui perspiciatis eum a exercitationem placeat voluptatibus repellat quibusdam labore suscipit numquam ipsa omnis! Harum iste laudantium, doloremque minus atque dolorem minima expedita, quaerat fuga nesciunt reiciendis cum?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt nostrum cumque error earum alias libero harum nam autem et, ullam porro qui perspiciatis eum a exercitationem placeat voluptatibus repellat quibusdam labore suscipit numquam ipsa omnis! Harum iste laudantium, doloremque minus atque dolorem minima expedita, quaerat fuga nesciunt reiciendis cum?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt nostrum cumque error earum alias libero harum nam autem et, ullam porro qui perspiciatis eum a exercitationem placeat voluptatibus repellat quibusdam labore suscipit numquam ipsa omnis! Harum iste laudantium, doloremque minus atque dolorem minima expedita, quaerat fuga nesciunt reiciendis cum?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt nostrum cumque error earum alias libero harum nam autem et, ullam porro qui perspiciatis eum a exercitationem placeat voluptatibus repellat quibusdam labore suscipit numquam ipsa omnis! Harum iste laudantium, doloremque minus atque dolorem minima expedita, quaerat fuga nesciunt reiciendis cum?</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste sunt nostrum cumque error earum alias libero harum nam autem et, ullam porro qui perspiciatis eum a exercitationem placeat voluptatibus repellat quibusdam labore suscipit numquam ipsa omnis! Harum iste laudantium, doloremque minus atque dolorem minima expedita, quaerat fuga nesciunt reiciendis cum?</p>
+
+    <script>
+
+        var paragrafos = document.getElementsByTagName('p');
+
+        for(var i = 0; i < paragrafos.length; i++){
+            paragrafos[i].innerHTML = formataParagrafo(paragrafos[i].innerHTML);
+        }
+
+        function formataParagrafo(texto){
+            var arr = texto.split(' '); // separa as palavras como cada elemento da array, a partir do espaços dos paragrafos.
+
+            if(arr.length > 10){
+                return arr.splice(0,10).join(' ') + '...'; //  concatena as arrays com espaços
+
+            }
+
+            return texto;
+        }
+    </script>
+    
+</body>
+</html>

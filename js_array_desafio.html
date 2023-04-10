@@ -128,12 +128,14 @@
             var tds = linha.querySelectorAll("td")
             var notas = valorColunas(tds);
 
+
+            // ARRAY SOME - Se tiver pelo menos uma nota === 0;
             var temZero = notas.some(function(nota){
-                return nota === 0;
+                return nota === 0; // retorna true 
             });
 
             // expressão ternario - resumo if/else
-            // expressao ? bloco verdade : bloco mentira
+            // variavel = expressao ? bloco verdade : bloco mentira
 
             var mensagem = temZero ? 'reprovado' : calcularmedia.apply(this, notas);
             linha.querySelector(".js-tabela tbody .aluno .aluno-m").textContent = mensagem;
