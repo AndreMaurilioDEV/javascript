@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio Date</title>
+</head>
+<body>
+    <script>
+
+        (function(){
+
+            var dataAtual = new Date(); // registra data atual instanciada (12/04/2023)
+            dataAtual.setHours(0);
+            dataAtual.setMinutes(0);
+            dataAtual.setSeconds(0);
+            dataAtual.setMilliseconds(0);
+
+            var anoAtual = dataAtual.getFullYear(); // pega o ano atual
+            var dataNiver = new Date(anoAtual, 3, 11); // data do aniversário
+            var dataAtualTS = dataAtual.getTime(); // data atual em timestamp
+            var dataNiverTS = dataNiver.getTime(); //  data do aniversário em timestamp
+
+            
+            if(dataNiverTS === dataAtualTS){ // se forem iguais é porque o aniversário é no dia
+                alert('Parabéns');
+                return;
+            }
+            
+            if(dataNiverTS < dataAtualTS){ // quer dizer que já passou a data
+                dataNiver.setFullYear(++anoAtual); // a data niver vai ser só ano que vem (++)
+                dataNiverTS = dataNiver.getTime() // pega o timestamp da data do aniversário(ano que vem);
+            }
+
+            const UM_DIA_TS = 24*60*60*1000; // horas*minutos*segundos*milisegundos
+            // const não muda 
+            var diferenca = dataNiverTS - dataAtualTS; // diferença do timestamp
+            console.log(diferenca / UM_DIA_TS); // timestamp em dia
+
+
+
+            //new Date(anoAtual, 3, 11); 365 DIAS, pois já passou 
+            //new Date(anoAtual, 3, 12); parabéns, pois é no dia
+            ////new Date(anoAtual, 3, 24); faltam 12 dias
+            
+        })();
+    </script>
+    
+</body>
+</html>

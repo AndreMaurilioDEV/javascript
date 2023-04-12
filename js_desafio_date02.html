@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date - javascript</title>
+</head>
+<body>
+
+    <script>
+
+        (function(){
+
+            var data = new Date(2023, 5, 5);
+
+            function formatada(data){
+
+                
+                var dia = data.getDate() < 10 ? '0' + data.getDate() : data.getDate();
+              
+
+                var mes = data.getMonth() + 1
+                // +1 pra somar e voltar pra o padrão de mês de 1 a 12
+                mes =  data.getMonth() < 10 ? '0' + mes : mes;
+                
+                return dia + '/' + mes + '/' + data.getFullYear();
+                
+
+            }
+
+            console.log(formatada(data));
+         
+        
+
+      
+        })();
+       
+       
+    </script>
+    
+</body>
+</html>

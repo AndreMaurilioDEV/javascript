@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date - javascript</title>
+</head>
+<body>
+
+    <script>
+        var minhaData = new Date()
+        // Date sem parâmetros mostra a daa e horário de hoje
+
+
+        // GET - OBTÉM VALORES
+
+
+        minhaData.getDay() // domingo - 0 até sabado - 6
+        // quarta feira - 3 
+
+        minhaData.getDate() //  dia do mês - 12
+
+
+        minhaData.getMonth() // janeiro é 0 no JS
+        // abril - 3 
+
+
+        minhaData.getFullYear() 
+        // 2023
+
+
+        minhaData.getHours() // horário que o new Date foi instanciado, não é ao vivo
+        // horas
+
+        minhaData.getMinutes()
+        // minutos
+
+        minhaData.getSeconds()
+
+        minhaData.getMilliseconds()
+
+        minhaData.getTime() // é um time stamp, número de milisegundos que passaram a partir 
+        // de janeiro de 1970 até a hora que o new Date foi instanciado
+
+        +new Date() // timestamp em milisegundos até hora que esse novo Date foi instanciado
+
+
+        // SET - ADICIONA VALORES
+
+
+        minhaData.setTime(0) // não passou nenhum milisegundos de 1970 até agora
+        // parou em 1969 - 1970
+
+        minhaData.setDate(12) 
+
+        minhaData.setMonth(1) // fevereiro
+
+        minhaData.setFullYear(2025)
+
+
+        // 00:00:00
+        minhaData.setHours(0)
+        minhaData.setMinutes(0)
+        minhaData.setSeconds(0)
+
+
+        // new Date(ano, mês, dia)
+        novaData = new Date(2015, 6, 25)
+
+        // new Date(ano, mês, dia, hora, minutos, segundos, milisegundos)
+        novaData = new Date(2015, 6, 25, 15, 51, 05, 500)
+
+
+
+    </script>
+    
+</body>
+</html>

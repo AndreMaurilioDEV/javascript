@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizadores - javascript</title>
+</head>
+<body>
+
+    <script>
+
+        // setTimeout(função, ms) - agenda a execução de uma função em determinado tempo
+        // 1s - 1000ms
+
+        var n = 0;
+
+        function somaUm(){
+            console.log('n ' +  n++)
+
+            if(n > 5){
+                clearInterval(intervalo); // para parar o setInterval
+            }
+        }
+       setTimeout(somaUm, 1000); // vai executar essa função dps de 1s
+
+
+       var intervalo = setInterval(somaUm, 5000); // vai executar a função a cada 5s
+       
+
+    </script>
+    
+</body>
+</html>

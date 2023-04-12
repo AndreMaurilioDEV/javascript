@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio - Temporizadores</title>
+</head>
+<style>
+   body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+   }
+
+   .relogio{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+   }
+</style>
+<body>
+
+    <div class="relogio">
+
+    </div>
+
+
+    <script>
+
+        (function(){
+
+
+
+            var div = document.querySelector('.relogio')
+
+
+            function mostrarHora(content){
+                div.textContent = content;
+            }
+
+            function getHora(){
+
+                var horas = new Date();
+                var hora = formatada(horas.getHours());
+                var minutos = formatada(horas.getMinutes());
+                var segundos = formatada(horas.getSeconds());
+
+
+                var horaAtual = hora + ':' + minutos + ':' + segundos;
+                
+                mostrarHora(horaAtual);
+            }
+
+            function formatada(tempo){
+                return tempo < 10 ? '0' + tempo : tempo;
+            }
+
+            setInterval(getHora, 1000)
+            
+
+        })();
+
+    </script>
+    
+</body>
+</html>
