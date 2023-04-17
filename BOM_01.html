@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM - JavaScript</title>
+</head>
+<body>
+
+
+    <script>
+
+        // BROWSER
+         innerHeight // altura interna do browser
+         innerWidth // largura interna do browser
+
+         outerHeight // altura externa(todo o browser)
+         outerWidth // largura externa(todo o browser)
+
+         pageXOffset // o quanto scrollou a pagina para os lados
+         pageYOffset // o quanto scrollou a pagina cima ou baixo
+
+         screenX // posição do browser em relação ao monitor nas laterais
+         // o browser colado na lateral tem screenX = 0
+         screenY // posição do browser em relação ao monitor cima ou baixo
+
+
+         // HISTORY
+
+         history.length
+         // Se navegar pra outra página, o length é 2(conta pagina ja acessadas tambem)
+         // 5 refresh na mesma página, por ex, o length será 6(conta refresh)
+
+         history.go(-1)
+         // volta da outra página(2) para a de antes(1)
+         history.go(1) // // vai pra frente(2)
+
+        // + SIMPLES -
+         history.back() // volta
+         history.forward() /// avança
+
+
+         // LOCATION
+
+         location // mostra propriedades da url como href, search, host, protocol etc..
+         location.search
+         location.href
+         location.hash
+         location.protocol
+
+         location.reload() // refresh na página
+         location.assign('https://www.google.com.br') // recebe uma url de uma "nova" página
+         location.replace('https://www.google.com.br')  // substitui
+         // recebe uma url, mas o length não é alterado
+
+
+         // NAVIGATOR
+
+         navigator // mostra propriedades do navegador, como versão, nome, linguagens
+
+         navigator.userAgent() 
+         // mostra da onde está chegando a requisição pra acessar sua página
+
+
+         // SCREEN - monitor do usuário
+
+         screen // mostra propriedades: 
+         // availHeigth - altura disponível - não conta barras de rolagens
+         // availWidth - largura disponível
+        // heigth - altura total - 1080px
+
+
+        // MÉTODOS
+
+        window.open('https://www.google.com.br') // abre uma nova aba
+        window.open('https://www.google.com.br', 'janela', 'with=600', 'heigth = 300') // pop-up
+        window.close() // so fecha se a janela for aberta pelo JS com open()
+
+
+        //scrollTo(X,Y)
+        // To - para posição
+
+        scrollTo(0, 50) // scrolla para posição 50 verticalmente
+        scrollTo(0, 60) // scrolla para posição 60 verticalmente
+        scrollTo(0, 0) // topo
+
+        scrollBy(0, 10) // ele soma ao scroll
+        scrollBy(0, 10) // 20
+        scrollBy(0, 30) // 50
+        scrollBy(0, 50) // 100
+        scrollBy(0, -20) // 80
+
+        print() // imprimi a página
+
+
+
+        // EVENTOS
+
+
+        window.addEventListener('load', function(){ // dispara quando a página é carregada totalmente
+        });
+
+        window.addEventListener('DomContentLoaded', function(){ 
+        });
+        // dispara quando a estrutura do html estiver pronta, não espera imagens e videos como o load
+
+        window.addEventListener('resize', function(){ // dispara quando  muda heigth ou width da pag
+        });
+
+        window.addEventListener('scroll', function(){ // dispara quando scrolla a página
+        });
+
+
+
+
+
+
+
+    </script>
+    
+    
+</body>
+</html>
